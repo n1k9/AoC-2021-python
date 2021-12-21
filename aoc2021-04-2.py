@@ -48,11 +48,9 @@ def simulate(boards, extractions):
     for e in extractions:
         print(f"extract {e}")
         boards = sign_boards(boards, e)
-        for board in boards:
-            win = check_win(board)
-            if win:
-                s = sum_of_all_unmarked_numbers(board)
-                return s * e
+        if len(boards) == 1 and check_win(boards[0]):
+            return e * sum_of_all_unmarked_numbers(boards[0])
+        boards = [b for b in boards if not check_win(b)]
 
 
 def read_data(filename: str):
