@@ -1,5 +1,7 @@
 #!/bin/env python
-# 
+# Advent of Code 2021 Day 1 first
+from python.utils import read_file
+
 
 def count_inc(measures:list) -> int:
     count = 0
@@ -9,11 +11,9 @@ def count_inc(measures:list) -> int:
         print(f"{measures[i]} > {measures[i-1]} --> {measures[i] > measures[i-1]} | {count}")
     return count
 
-def read_file(filename:str) -> list:
-    with open(filename, 'r') as f:
-        return list(map(int, f.readlines()))
 
 if __name__ == "__main__":
-    measures_list = read_file('aoc2021-01_data01.txt')
-    # measures_list = read_file('aoc2021-01_test01.txt')
-    print(count_inc(measures_list))
+    measures_list = read_file('day01_test01.txt')
+    print("TEST:", count_inc(measures_list))
+    measures_list = read_file('day01_data01.txt')
+    print("RESULT:", count_inc(measures_list))

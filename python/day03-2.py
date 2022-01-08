@@ -39,8 +39,8 @@ def read_file(filename:str) -> list[str]:
 
 
 if __name__ == "__main__":
-    dagnostics = read_file('aoc2021-03_data.txt')
-    # dagnostics = read_file('aoc2021-03_test.txt')
+    dagnostics = read_file('day03_data.txt')
+    # dagnostics = read_file('day03_test.txt')
     oxygen_generator_rating = analize_oxygen(dagnostics)
     co2_scrubber_rating = CO2_scrubber_rating(dagnostics)
     print(f"oxygen generator rating ({oxygen_generator_rating})", int(oxygen_generator_rating, 2))

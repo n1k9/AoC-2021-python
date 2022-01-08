@@ -2,6 +2,7 @@
 from pprint import pprint
 from functools import reduce
 
+
 def sign_number(board, number):
     for i in range(5):
         for j in range(5):
@@ -30,7 +31,7 @@ def check_win(board):
     return row_win or col_win
 
 
-def sign_boards(boards:list[list], extract_number:int):
+def sign_boards(boards: list[list], extract_number: int):
     for i in range(len(boards)):
         boards[i] = sign_number(boards[i], extract_number)
     return boards
@@ -48,9 +49,11 @@ def simulate(boards, extractions):
     for e in extractions:
         print(f"extract {e}")
         boards = sign_boards(boards, e)
-        if len(boards) == 1 and check_win(boards[0]):
-            return e * sum_of_all_unmarked_numbers(boards[0])
-        boards = [b for b in boards if not check_win(b)]
+        for board in boards:
+            win = check_win(board)
+            if win:
+                s = sum_of_all_unmarked_numbers(board)
+                return s * e
 
 
 def read_data(filename: str):
@@ -75,5 +78,5 @@ def read_data(filename: str):
 
 
 if __name__ == '__main__':
-    e, b = read_data('aoc2021-04_data.txt')
+    e, b = read_data('day04_data.txt')
     print('score:', simulate(b, e))
