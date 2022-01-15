@@ -1,6 +1,6 @@
 #!/bin/env python
 # Advent of Code 2021 Day 2 first
-from python.utils import read_file
+# from python.utils import read_file
 
 
 def exec_commands(commands):

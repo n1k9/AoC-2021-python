@@ -1,6 +1,6 @@
 #!/bin/env python
 # Advent of Code 2021 Day 3 first
-from python.utils import read_file
+from python.utils import read_file_str
 
 
 def gamma_epsilon_rate(diagnostics):
@@ -22,13 +22,8 @@ def gamma_epsilon_rate(diagnostics):
     return gamma_r, epsilon_r
 
 
-def read_file(filename:str) -> list:
-    with open(filename, 'r') as f:
-        return f.readlines()
-
-
 if __name__ == "__main__":
-    diagnostics = read_file('day03_data.txt')
+    diagnostics = read_file_str('day03_data.txt')
     # diagnostics = read_file('day03_test.txt')
     gamma, epsilon = gamma_epsilon_rate(diagnostics)
 

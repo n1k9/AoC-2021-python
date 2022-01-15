@@ -3,7 +3,7 @@
 def str_to_int_list(s): return [int(c) for c in s]
 
 
-def read_file(filename: str) -> list:
+def read_file(filename: str) -> list[str]:
     with open(filename, 'r') as f:
         return [str_to_int_list(line.strip()) for line in f.readlines()]
 

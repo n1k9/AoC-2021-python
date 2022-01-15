@@ -1,6 +1,6 @@
 #!/bin/env python
 # Advent of Code 2021 Day 1 first
-from python.utils import read_file
+from python.utils import read_file_int as read_file
 
 
 def count_inc(measures:list) -> int:
@@ -8,7 +8,7 @@ def count_inc(measures:list) -> int:
     for i in range(1, len(measures)):
         if measures[i] > measures[i-1]:
             count += 1
-        print(f"{measures[i]} > {measures[i-1]} --> {measures[i] > measures[i-1]} | {count}")
+        # print(f"{measures[i]} > {measures[i-1]} --> {measures[i] > measures[i-1]} | {count}")
     return count
 
 
